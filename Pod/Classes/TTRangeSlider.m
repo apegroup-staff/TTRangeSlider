@@ -45,12 +45,22 @@ static const CGFloat kLabelsFontSize = 12.0f;
     self.leftHandle = [CALayer layer];
     self.leftHandle.cornerRadius = 8.0f;
     self.leftHandle.backgroundColor = self.tintColor.CGColor;
+    self.leftHandle.masksToBounds = NO;
+    self.leftHandle.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    self.leftHandle.shadowColor = [UIColor blackColor].CGColor;
+    self.leftHandle.shadowOpacity = 0.5f;
+    self.leftHandle.shadowRadius = 0.5f;
     [self.layer addSublayer:self.leftHandle];
     
     //draw the maximum slider handle
     self.rightHandle = [CALayer layer];
     self.rightHandle.cornerRadius = 8.0f;
     self.rightHandle.backgroundColor = self.tintColor.CGColor;
+    self.rightHandle.masksToBounds = NO;
+    self.rightHandle.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    self.rightHandle.shadowColor = [UIColor blackColor].CGColor;
+    self.rightHandle.shadowOpacity = 0.5f;
+    self.rightHandle.shadowRadius = 0.5f;
     [self.layer addSublayer:self.rightHandle];
 
     self.leftHandle.frame = CGRectMake(0, 0, HANDLE_DIAMETER, HANDLE_DIAMETER);
