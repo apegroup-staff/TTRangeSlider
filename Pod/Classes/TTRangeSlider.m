@@ -320,6 +320,16 @@ static const CGFloat kLabelsFontSize = 12.0f;
     }
 }
 
+- (void)cancelTrackingWithEvent:(UIEvent *)event {
+    if (self.leftHandleSelected){
+        self.leftHandleSelected = NO;
+        [self animateHandle:self.leftHandle withSelection:NO];
+    } else {
+        self.rightHandleSelected = NO;
+        [self animateHandle:self.rightHandle withSelection:NO];
+    }
+}
+
 #pragma mark - Animation
 - (void)animateHandle:(CALayer*)handle withSelection:(BOOL)selected {
     if (selected){
